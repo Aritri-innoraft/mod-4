@@ -1,0 +1,7 @@
+name: 'My first custom drupal module.'
+type: module
+core_version_requirement: ^9 || ^10
+description: 'Module development understanding'
+package: 'custom'
+configure: mymodule.settings_form
+

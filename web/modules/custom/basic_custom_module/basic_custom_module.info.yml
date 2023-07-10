@@ -1,0 +1,5 @@
+name: 'Basic custom module.'
+type: module
+core_version_requirement: ^9 || ^10
+description: 'This is a basic module created for module development task.'
+package: 'custom'
