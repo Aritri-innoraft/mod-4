@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains Drupal\mymodule\Form\MyModuleSettingsForm.  
+ * Contains Drupal\mymodule\Form\AjaxForm
  */
 namespace Drupal\mymodule\Form;
 
@@ -10,7 +10,6 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface; 
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
-use Drupal\Core\Database\Database;
 
 class AjaxForm extends FormBase { 
 
@@ -43,44 +42,72 @@ class AjaxForm extends FormBase {
       '#default_value' => $form_state->getValue('lastname'),
     ];
 
-    $form['email'] = [
-      '#type' => 'email',
-      '#title' => $this->t('Email ID:'),
-      '#default_value' => $form_state->getValue('email'),
+    $form['select_field'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Select an item'),
+      '#options' => [
+        'aritri' => $this->t('Aritri'),
+        'riya' => $this->t('Riya'),
+        'pratyusha' => $this->t('Pratyusha'),
+      ],
+      '#ajax' => [
+        'callback' => '::myAjaxCallback',
+        'event' => 'change',
+        'wrapper' => 'edit-output',
+        'progress' => [
+          'type' => 'throbber',
+          'message' => $this->t('Verifying entry...'),
+        ],
+      ],
+    ];
+
+    $form['output'] = [
+      '#type' => 'textfield',
+      '#disabled' => TRUE,
+      '#value' => 'Hello',
+      '#prefix' => '<div class="edit-output">',
+      '#suffix' => '</div>',
     ];
 
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Save'),
-      '#ajax' => [
-        'callback' => '::submitData',
-      ],
+      // '#ajax' => [
+      //   'callback' => '::submitData',
+      // ],
     ];
     
+     
     return $form;
   }
 
-  public function submitData(array &$form, FormStateInterface $form_state) {
-    $ajax_response = new AjaxResponse();
-    $connection = Database::getConnection();
-    $form_val = $form_state->getValues();
-
-    $form_data['firstname'] = $form_val['firstname'];
-    $form_data['lastname'] = $form_val['lastname'];
-    $form_data['email'] = $form_val['email'];
-
-    $connection->insert('ajaxform')
-      ->fields($form_data)
-      ->execute();
-    
-    $ajax_response->addCommand(new HtmlCommand('.success', 'Form submitted successfully'));
-    return $ajax_response;
+  /**
+   * Function to get the value from example select field and fill the textbox 
+   * with the selected text.
+   */
+  public function myAjaxCallback(array &$form, FormStateInterface $form_state) {
+    $ajax_res = new AjaxResponse();
+    // If there's a value submitted for the select list then set the textfield value.
+    if ($selectedValue = $form_state->getValue('select_field')) {
+      // Get the text of the selected option.
+      $selectedText = $form['select_field']['#options'][$selectedValue];
+      // Place the text of the selected option in our textfield.
+      // $form['output']['#value'] = $selectedText;
+      $ajax_res->addCommand(new HtmlCommand('.edit-output', $selectedText));
+      
+    }
+    // Return the prepared textfield.
+    // return $form['output']; 
+    return $ajax_res;
   }
+
+
+  
 
   /**
    * {@inheritdoc}
    */
   public function submitForm(&$form, FormStateInterface $form_state) {
-
+    parent::submitForm($form, $form_state);
   }
 }

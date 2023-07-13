@@ -30,4 +30,17 @@ class CurrentUser {
     return $this->currentUser->getAccountName();
   }
 
+  /**
+   * Function to get id of the current user.
+   */
+  public function getId() {
+    return $this->currentUser->id();
+  }
+
+  /**
+   * Function to get role of the current user.
+   */
+  public function getRole() {
+    return $this->currentUser->getRoles();
+  }
 }

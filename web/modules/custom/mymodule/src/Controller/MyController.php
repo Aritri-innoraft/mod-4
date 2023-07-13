@@ -43,8 +43,8 @@ class MyController extends ControllerBase {
   
   public function usernameDI() {
     $username = $this->currentUser->getUsername();
-    $cachetags = ['user:' . \Drupal::currentUser()->id()];
-    if (!\Drupal::currentUser()->id()) {
+    $cachetags = ['user:' . $this->currentUser->getId()];
+    if (!$this->currentUser->getId()) {
       return [
         '#type' => 'markup',
         '#cache' => [
@@ -119,6 +119,18 @@ class MyController extends ControllerBase {
   public function accessCheck(AccountInterface $account) {
     // Check for permission'Access custom page'.
     return AccessResult::forbiddenIf($account->hasPermission('access the custom page'));
+  }
+
+  /**
+   * Returns a simple page.
+   *
+   * @return array
+   *   A simple renderable array.
+   */
+  public function myPage() {
+    return [
+      '#markup' => t(string: 'Hello World'),
+    ];
   }
 
 }

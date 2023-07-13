@@ -1,0 +1,25 @@
+uuid: 65c4a385-44a2-45dd-9ce1-f827aaa6d6c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - mymodule
+    - system
+  theme:
+    - olivero
+id: olivero_mymodulecustomblock
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: mymodule_custom_block
+settings:
+  id: mymodule_custom_block
+  label: 'MyModule Custom Block'
+  label_display: visible
+  provider: mymodule
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /custom-welcome-page

@@ -5,6 +5,7 @@
  * This file demonstrates how to use hook functions.
  */
 
+use Drupal\Core\Url;
 use Drupal\mymodule\Controller\MyController;
 use Drupal\node\NodeInterface;
 
@@ -13,8 +14,6 @@ use Drupal\node\NodeInterface;
 */
 function mymodule_cron() {
   \Drupal::messenger()->addMessage(t("Hello from mymodule cron hook!!"));
-  $obj = new MyController();
-  // $obj->testObj();
 }
 
 /**
@@ -32,6 +31,23 @@ function mymodule_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_
   else {
     \Drupal::messenger()->addMessage(t("You  DO NOT have static permission 2!"));
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function mymodule_form_user_login_form_alter(&$form) {
+  $form['#submit'][] = 'mymodule_user_login_submit';
+}
+
+/**
+ * Form submission handler for user_login_form().
+ *
+ * Redirects the user to the /custom-welcome-page after logging in.
+ */
+function mymodule_user_login_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $url = Url::fromRoute('mymodule.my_page');
+  $form_state->setRedirectUrl($url);
 }
 
 // function mymodule_preprocess_page(&$variable) {

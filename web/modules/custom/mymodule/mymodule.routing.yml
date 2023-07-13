@@ -22,6 +22,22 @@ ajax_form:
   requirements:
     _permission: 'access content'
 
+block_task_form:
+  path: '/admin/block/form'
+  defaults:
+    _form: '\Drupal\mymodule\Form\BlockTaskForm'
+    _title: 'Block Form'
+  requirements:
+    _permission: 'access content'
+
+conditional_field_form:
+  path: '/field/form'
+  defaults:
+    _form: '\Drupal\mymodule\Form\ConditionalFieldForm'
+    _title: 'Conditional Field Form'
+  requirements:
+    _permission: 'access content'
+
 mymodule.helloMsg:
   path: '/hellomsg'
   defaults:
@@ -45,12 +61,20 @@ mymodule.helloUser:
     _title: 'This page is created to say hello to the user'
   requirements:
     _role: 'administrator + content_editor + manager'
-    _custom_access: '\Drupal\mymodule\Controller\MyController::accessCheck'
+    # _custom_access: '\Drupal\mymodule\Controller\MyController::accessCheck'
 
 mymodule.usernameDI:
   path: '/hellouserDI'
   defaults:
     _controller: '\Drupal\mymodule\Controller\MyController::usernameDI'
     _title: 'This page is created to say hello to the user by fetching username through dependency injection.'
+  requirements:
+    _permission: 'access content'
+
+mymodule.my_page:
+  path: '/custom-welcome-page'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\MyController::myPage'
+    _title: 'Custom Welcome Page'
   requirements:
     _permission: 'access content'
