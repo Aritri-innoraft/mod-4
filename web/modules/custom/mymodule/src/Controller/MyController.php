@@ -15,7 +15,7 @@ use Drupal\mymodule\CurrentUser;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Class to implement controller to show hello message to user.
+ * Class to implement controller of mymodule.
  */
 class MyController extends ControllerBase {
 

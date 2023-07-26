@@ -1,18 +1,16 @@
-uuid: e2811b9e-c7fb-465d-8410-7f3395029867
+uuid: 8cf9dea5-c3eb-4fc5-babd-2b89bf450475
 langcode: en
 status: true
 dependencies:
   module:
+    - mymodule
     - node
-    - text
-_core:
-  default_config_hash: Y8Yeu7Cn52HO6udPM3nmpj9Br942h88YpEN_gScp6KM
-id: node.body
-field_name: body
+id: node.field_snippet
+field_name: field_snippet
 entity_type: node
-type: text_with_summary
+type: snippets_code
 settings: {  }
-module: text
+module: mymodule
 locked: false
 cardinality: 1
 translatable: true

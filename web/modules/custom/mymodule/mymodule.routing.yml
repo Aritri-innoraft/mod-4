@@ -63,14 +63,6 @@ mymodule.helloUser:
     _role: 'administrator + content_editor + manager'
     # _custom_access: '\Drupal\mymodule\Controller\MyController::accessCheck'
 
-mymodule.usernameDI:
-  path: '/hellouserDI'
-  defaults:
-    _controller: '\Drupal\mymodule\Controller\MyController::usernameDI'
-    _title: 'This page is created to say hello to the user by fetching username through dependency injection.'
-  requirements:
-    _permission: 'access content'
-
 mymodule.my_page:
   path: '/custom-welcome-page'
   defaults:

@@ -1,0 +1,21 @@
+uuid: 435c5d42-eb82-46be-b88a-1207baed2c66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_snippet
+    - node.type.article
+  module:
+    - mymodule
+id: node.article.field_snippet
+field_name: field_snippet
+entity_type: node
+bundle: article
+label: snippet
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: snippets_code

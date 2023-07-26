@@ -95,3 +95,16 @@ function mymodule_node__view(array &$build, \Drupal\Core\Entity\EntityInterface 
     ),
   );
 }
+
+/**
+ * Implements hook_theme().
+ */
+function mymodule_theme($existing, $type, $theme, $path) {
+  return [
+    'mymodule_custom_formatter' => [
+      'variables' => [
+        'value' => NULL,
+      ],
+    ],
+  ];
+}

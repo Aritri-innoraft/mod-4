@@ -1,0 +1,56 @@
+#This file tells Drupal how the form should be displayed when creating a new node of our custom content type.
+# core.entity_form_display.node.movie.default.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.movie.body
+    - field.field.node.movie.field_movie_price
+    - field.field.node.movie.field_movie_image
+    - node.type.movie
+  module:
+    - file 
+    - path
+    - text
+id: node.movie.default
+targetEntityType: node
+bundle: movie
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_textarea_with_summary
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+
+  field_movie_price:
+    label: above
+    type: text_textarea_with_summary
+    weight: 101
+    settings: 
+      size: 60
+      placeholder: 'Movie price'
+    third_party_settings: {  }
+
+  field_movie_image:
+    label: above
+    type: text_textarea_with_summary
+    weight: 101
+    settings: 
+      size: 60
+      placeholder: 'Movie image'
+    third_party_settings: {  }
+
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+
+  links:
+    weight: 100
+    
+hidden: {  }

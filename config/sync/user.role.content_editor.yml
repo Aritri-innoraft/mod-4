@@ -10,7 +10,6 @@ dependencies:
     - comment
     - contextual
     - file
-    - mymodule
     - node
     - path
     - system
@@ -28,7 +27,6 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
-  - 'access the custom page'
   - 'access toolbar'
   - 'access tour'
   - 'administer url aliases'
