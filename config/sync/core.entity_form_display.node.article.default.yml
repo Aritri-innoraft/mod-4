@@ -5,12 +5,15 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_color
+    - field.field.node.article.field_date
+    - field.field.node.article.field_date1
     - field.field.node.article.field_image
     - field.field.node.article.field_snippet
     - field.field.node.article.field_tags
     - image.style.thumbnail
     - node.type.article
   module:
+    - datetime
     - image
     - mymodule
     - path
@@ -35,6 +38,18 @@ content:
   field_color:
     type: mymodule_rgb_widget
     weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date:
+    type: datetime_default
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date1:
+    type: datetime_default
+    weight: 29
     region: content
     settings: {  }
     third_party_settings: {  }

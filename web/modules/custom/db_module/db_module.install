@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file 
+ * This file demonstrates how to use hook functions.
+ */
+
+/**
+ * Implementing hook_uninstall().
+ */
+function db_module_uninstall($is_syncing) {
+  // Delete all nodes of given content type.
+  // $storage_handler = \Drupal::entityTypeManager()
+  // ->getStorage('node');
+  // $nodes = $storage_handler->loadByProperties(['type' => 'events']);
+  // $storage_handler->delete($nodes);
+
+  // Delete content type.
+  // $content_type = \Drupal::entityTypeManager()
+  // ->getStorage('node_type')
+  // ->load('events');
+  // $content_type->delete();
+
+  // Show error message while uninstalling module if any node of events exist.
+  // $query = \Drupal::entityQuery('node')
+  // ->condition('type', 'events')
+  // ->count();
+  // $query->accessCheck(FALSE);
+  // $node_count = $query->execute();
+  // if ($node_count > 0) {
+  //   throw new \Drupal\Core\Extension\ModuleUninstallValidatorException(t('You can not remove this content type until you have removed all of the Movie Type content.'));
+  // }
+  // else {
+  //   // Deleting config files.
+  //   $config_names = [
+  //   'field.storage.node.field_events_date',
+  //   'field.storage.node.field_events_details',
+  //   'field.storage.node.field_events_type',
+  //   'field.field.node.movie.field_events_date',
+  //   'field.field.node.movie.field_events_details',
+  //   'field.field.node.movie.field_events_type',
+  //   'core.entity_form_display.node.events.default',
+  //   'core.entity_view_display.node.events.default',
+  //   ];
+  //   foreach ($config_names as $config_name) {
+  //   \Drupal::configFactory()->getEditable($config_name)->delete();
+  //   }
+  // }
+
+}

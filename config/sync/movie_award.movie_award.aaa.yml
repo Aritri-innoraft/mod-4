@@ -1,0 +1,13 @@
+uuid: c459d81b-d243-4c38-bb00-0e0464e6d2b9
+langcode: en
+status: true
+dependencies: {  }
+id: aaa
+label: AAA
+description: mbhfghh
+year: '1234'
+movie:
+  -
+    target_id: '22'
+  -
+    target_id: '19'

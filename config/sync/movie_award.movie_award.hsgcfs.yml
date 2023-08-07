@@ -1,0 +1,11 @@
+uuid: d8b29dde-55d7-441d-8ca6-7250685dd962
+langcode: en
+status: true
+dependencies: {  }
+id: hsgcfs
+label: hsgcfs
+description: dcdc
+year: '5765'
+movie:
+  -
+    target_id: '19'

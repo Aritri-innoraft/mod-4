@@ -1,0 +1,25 @@
+<?php 
+
+use Drupal\event_module\NodeMessageDispatcher;
+use \Drupal\Core\Entity\EntityInterface;
+
+/*
+ * Implements hook_toolbar_alter()
+ */
+function event_module_toolbar_alter(&$items) {
+    $items['administration']['#attached']['library'][] = 'event_module/toolbar-icon';
+  }
+  
+/**
+ * Implements hook_preprocess_HOOK() for node templates.
+ */
+// function event_module_preprocess_node(&$variables) {
+//   // Check if the node is of a particular content type (bundle).
+//   if ($variables['node']->getType() == 'movie_type') {
+//     // Get the NodeMessageDispatcher service.
+//     $nodeMessageDispatcher = \Drupal::service('event_module.node_message_dispatcher');
+    
+//     // Show the message on each node of the specified content type.
+//     $nodeMessageDispatcher->showMessageOnNode('This is a custom message for nodes of the "movie_type" content type.');
+//   }
+// }

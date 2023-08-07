@@ -1,0 +1,8 @@
+uuid: b780281d-eb33-4cc7-85fc-5398cfaf38d3
+langcode: en
+status: true
+dependencies: {  }
+id: new_type
+label: 'new type'
+description: sdvd
+year: '2001'

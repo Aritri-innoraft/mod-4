@@ -1,6 +1,0 @@
-name: 'Config Test Module'
-type: module
-core_version_requirement: ^9 || ^10
-description: 'Contains implementation of sudom config entity.'
-package: 'custom'
-configure: config_test.settings_form
