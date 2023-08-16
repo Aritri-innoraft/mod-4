@@ -1,0 +1,24 @@
+uuid: a8c5d8e0-49c9-437e-8908-13ac1915d36d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.theme_3_ct.field_contact_details
+    - field.field.node.theme_3_ct.field_education
+    - node.type.theme_3_ct
+  module:
+    - user
+id: node.theme_3_ct.teaser
+targetEntityType: node
+bundle: theme_3_ct
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_contact_details: true
+  field_education: true

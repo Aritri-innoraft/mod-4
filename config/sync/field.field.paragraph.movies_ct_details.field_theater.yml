@@ -1,0 +1,22 @@
+uuid: 4c8cf4dd-46ad-4100-ac15-b322515662ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_theater
+    - paragraphs.paragraphs_type.movies_ct_details
+  module:
+    - text
+id: paragraph.movies_ct_details.field_theater
+field_name: field_theater
+entity_type: paragraph
+bundle: movies_ct_details
+label: Theater
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text

@@ -35,8 +35,8 @@ function movie_type_uninstall($is_syncing) {
     $config_names = [
     'field.storage.node.field_movie_type_image',
     'field.storage.node.field_movie_type_price',
-    'field.field.node.movie.field_movie_type_image',
-    'field.field.node.movie.field_movie_type_price',
+    'field.field.node.movie_type.field_movie_type_image',
+    'field.field.node.movie_type.field_movie_type_price',
     'core.entity_form_display.node.movie_type.default',
     'core.entity_view_display.node.movie_type.default',
     ];

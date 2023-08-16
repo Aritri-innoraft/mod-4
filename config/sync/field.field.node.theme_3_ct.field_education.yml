@@ -1,0 +1,34 @@
+uuid: b62cfef6-3707-4e9c-88e3-26c881c91c3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_education
+    - node.type.theme_3_ct
+    - paragraphs.paragraphs_type.education_details
+  module:
+    - entity_reference_revisions
+id: node.theme_3_ct.field_education
+field_name: field_education
+entity_type: node
+bundle: theme_3_ct
+label: Education
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      education_details: education_details
+    negate: 0
+    target_bundles_drag_drop:
+      education_details:
+        weight: 3
+        enabled: true
+      movies_ct_details:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

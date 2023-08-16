@@ -1,0 +1,10 @@
+uuid: b9b3d59e-a01f-434d-9abd-fb8125945c78
+langcode: en
+status: true
+dependencies: {  }
+id: education_details
+label: 'Education details'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

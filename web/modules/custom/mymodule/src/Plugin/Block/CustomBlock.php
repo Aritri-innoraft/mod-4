@@ -54,7 +54,7 @@ class CustomBlock extends BlockBase implements ContainerFactoryPluginInterface {
   }
   public function build() {
     $roles = $this->userRole->getRole();
-    $role_name = Role::load($roles[1])->label();
+    $role_name = Role::load($roles[0])->label();
     // dd($roles[0]);
     // foreach ($roles as $role) {
 

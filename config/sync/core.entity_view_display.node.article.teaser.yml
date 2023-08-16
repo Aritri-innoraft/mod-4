@@ -8,7 +8,10 @@ dependencies:
     - field.field.node.article.field_color
     - field.field.node.article.field_date
     - field.field.node.article.field_date1
+    - field.field.node.article.field_genre
     - field.field.node.article.field_image
+    - field.field.node.article.field_order
+    - field.field.node.article.field_reference
     - field.field.node.article.field_snippet
     - field.field.node.article.field_tags
     - image.style.medium
@@ -58,6 +61,9 @@ hidden:
   field_color: true
   field_date: true
   field_date1: true
+  field_genre: true
   field_image: true
+  field_order: true
+  field_reference: true
   field_snippet: true
   field_tags: true

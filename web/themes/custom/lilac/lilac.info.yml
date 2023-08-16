@@ -1,0 +1,26 @@
+name: Lilac
+type: theme
+description: 'Lilac color based theme.'
+core_version_requirement: ^9 || ^10
+base theme: bootstrap5
+regions:
+  header: Header
+  nav_branding: 'Navigation branding region'
+  nav_main: 'Main navigation region'
+  nav_additional: 'Additional navigation region (eg search form, social icons, etc)'
+  breadcrumb: Breadcrumbs
+  custom_region: 'Custom region'
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer
+regions_hidden:
+  - sidebar_second
+logo: images/logo.png
+screenshot: screenshot.png
+# A list of features to expose on the theme "Settings" page.
+features:
+  - favicon
+  - logo
+libraries:
+  - lilac/global-style

@@ -22,6 +22,7 @@ function menu_module_toolbar_alter(&$items) {
         // Get amount from config form.
         // $config_amount = \Drupal::config('menu_module.admin_settings')->get('amount');
         $config = \Drupal::config('menu_module.admin_settings');
+        // dump($config->getCacheTags());
         // Check whether movie is within budget or over budget.
         if ($config->get('amount') > $field_value) {
           $message = '<p><strong>The movie is under budget</strong></p>';

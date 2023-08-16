@@ -1,0 +1,22 @@
+uuid: 3565034a-bd08-4222-84e9-ae8bb61f21f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_school
+    - paragraphs.paragraphs_type.education_details
+  module:
+    - text
+id: paragraph.education_details.field_school
+field_name: field_school
+entity_type: paragraph
+bundle: education_details
+label: School
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text

@@ -1,0 +1,25 @@
+uuid: 268dadb4-6fdb-4122-8e45-50723a2ab5bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_details
+    - node.type.theme_3_ct
+  module:
+    - webform
+id: node.theme_3_ct.field_contact_details
+field_name: field_contact_details
+entity_type: node
+bundle: theme_3_ct
+label: 'Contact Details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform

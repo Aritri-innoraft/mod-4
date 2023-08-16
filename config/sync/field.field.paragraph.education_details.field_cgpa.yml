@@ -1,0 +1,22 @@
+uuid: 2aeb7cec-c0ef-4dab-993a-9c383ef81135
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cgpa
+    - paragraphs.paragraphs_type.education_details
+  module:
+    - text
+id: paragraph.education_details.field_cgpa
+field_name: field_cgpa
+entity_type: paragraph
+bundle: education_details
+label: CGPA
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text

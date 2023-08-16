@@ -57,7 +57,6 @@ class MenuModuleForm extends ConfigFormBase {
     $config = $this->config('menu_module.admin_settings');
     $config->delete();
     $config->set('amount', $form_state->getValue('amount'));
-
     $config->save();
     // parent::submitForm($form, $form_state);
   }

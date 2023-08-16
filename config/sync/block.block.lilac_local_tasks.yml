@@ -1,0 +1,22 @@
+uuid: f7c7fb16-2f8b-4ce7-be01-34973490d47c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - lilac
+_core:
+  default_config_hash: yX9o6NcntZnXRDfbJoHY1pJwuXlumW44m5AMs347NN4
+id: lilac_local_tasks
+theme: lilac
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

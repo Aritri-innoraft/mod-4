@@ -1,0 +1,6 @@
+phone-js:
+  version: 1.x
+  js:
+    js/phone.js: {}
+  dependencies:
+    - core/jquery

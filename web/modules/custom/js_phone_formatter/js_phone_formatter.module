@@ -1,0 +1,13 @@
+<?php 
+
+/**
+* Implements hook_form_alter().
+*/
+function js_phone_formatter_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'node_test_js_form') {
+    \Drupal::messenger()->addMessage(t("Hello this is js module"));
+    // Attach the library to the phone number field.
+    $form['field_phone_number[0][value]']['#attached']['library'][] = 'js_phone_formatter/phone-js';
+  }
+}
+  

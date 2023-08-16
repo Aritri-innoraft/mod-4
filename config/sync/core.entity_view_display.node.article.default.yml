@@ -7,7 +7,10 @@ dependencies:
     - field.field.node.article.field_color
     - field.field.node.article.field_date
     - field.field.node.article.field_date1
+    - field.field.node.article.field_genre
     - field.field.node.article.field_image
+    - field.field.node.article.field_order
+    - field.field.node.article.field_reference
     - field.field.node.article.field_snippet
     - field.field.node.article.field_tags
     - image.style.wide
@@ -57,6 +60,14 @@ content:
     third_party_settings: {  }
     weight: 8
     region: content
+  field_genre:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
   field_image:
     type: image
     label: hidden
@@ -67,6 +78,23 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_order:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_reference:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 11
     region: content
   field_snippet:
     type: snippets_default

@@ -1,0 +1,19 @@
+uuid: 3bc74fcb-c115-4782-82dc-4c5ca0c6a959
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_timing
+    - paragraphs.paragraphs_type.movies_ct_details
+id: paragraph.movies_ct_details.field_timing
+field_name: field_timing
+entity_type: paragraph
+bundle: movies_ct_details
+label: Timing
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

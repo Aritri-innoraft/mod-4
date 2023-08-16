@@ -1,0 +1,22 @@
+uuid: a0b436b0-d5ee-4eef-8b46-917fe5919877
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - lilac
+_core:
+  default_config_hash: 9LdMj38y4GDi23GrIUtIZIV1bJEn1C47N19jrswvcLc
+id: lilac_messages
+theme: lilac
+region: content
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

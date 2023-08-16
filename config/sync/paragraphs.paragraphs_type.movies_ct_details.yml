@@ -1,0 +1,10 @@
+uuid: 67174adb-404c-412b-b750-09c8435a418e
+langcode: en
+status: true
+dependencies: {  }
+id: movies_ct_details
+label: 'Movies CT Details'
+icon_uuid: null
+icon_default: null
+description: 'Stores details of Movies CT content type.'
+behavior_plugins: {  }

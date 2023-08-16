@@ -25,7 +25,6 @@ class CustomMultistepForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-
     // If current_page is set to 2, secondForm() method is called.
     if ($form_state->has('current_page') && $form_state->get('current_page') == 2) {
       // dd($form_state->getValue('current_page', 2));

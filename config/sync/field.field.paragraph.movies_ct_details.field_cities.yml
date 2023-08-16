@@ -1,0 +1,22 @@
+uuid: 53ad0f51-df38-4868-b4c9-ab7404a2bb0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cities
+    - paragraphs.paragraphs_type.movies_ct_details
+  module:
+    - text
+id: paragraph.movies_ct_details.field_cities
+field_name: field_cities
+entity_type: paragraph
+bundle: movies_ct_details
+label: Cities
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text

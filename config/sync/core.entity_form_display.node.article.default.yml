@@ -7,7 +7,10 @@ dependencies:
     - field.field.node.article.field_color
     - field.field.node.article.field_date
     - field.field.node.article.field_date1
+    - field.field.node.article.field_genre
     - field.field.node.article.field_image
+    - field.field.node.article.field_order
+    - field.field.node.article.field_reference
     - field.field.node.article.field_snippet
     - field.field.node.article.field_tags
     - image.style.thumbnail
@@ -53,6 +56,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_genre:
+    type: entity_reference_autocomplete
+    weight: 30
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_image:
     type: image_image
     weight: 1
@@ -60,6 +73,23 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_order:
+    type: number
+    weight: 31
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_reference:
+    type: entity_reference_autocomplete
+    weight: 32
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_snippet:
     type: snippets_default

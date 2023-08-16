@@ -1,0 +1,26 @@
+global-style:
+  version: Version
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/script.js: {}
+  dependencies:
+    - core/drupalSettings
+
+article-js:
+  version: Version
+  js:
+    js/article.js: {}
+  dependencies:
+    - core/drupalSettings
+  # drupalSettings:
+  #   article:
+  #     message: 'This is an article'
+
+# phone-js:
+#   version: 1.x
+#   js:
+#     js/phone.js: {}
+#   dependencies:
+#     - core/jquery
