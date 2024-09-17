@@ -1,0 +1,7 @@
+custom_page:
+  path: '/page'
+  defaults:
+    _form: '\Drupal\theme3_module\Controller\ThemeController::customPage'
+    _title: 'Cuntom Page of Theme 3'
+  requirements:
+    _permission: 'access content'

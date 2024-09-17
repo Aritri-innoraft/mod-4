@@ -1,0 +1,14 @@
+.movies-ct-table th, .movies-ct-table td {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.movies-ct-table {
+    border: 2px solid rgb(57, 55, 55);
+    width: 80%;
+    margin: 15px;
+}
+
+.movies-ct-table th {
+    background: rgb(222, 134, 134);
+}

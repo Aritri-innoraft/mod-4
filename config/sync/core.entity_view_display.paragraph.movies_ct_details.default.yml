@@ -1,0 +1,51 @@
+uuid: 4f399229-f7b4-454a-81fa-6647f6e3f814
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.movies_ct_details.field_cities
+    - field.field.paragraph.movies_ct_details.field_theater
+    - field.field.paragraph.movies_ct_details.field_timing
+    - paragraphs.paragraphs_type.movies_ct_details
+  module:
+    - text
+id: paragraph.movies_ct_details.default
+targetEntityType: paragraph
+bundle: movies_ct_details
+mode: default
+content:
+  field_cities:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_theater:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_timing:
+    type: timestamp
+    label: above
+    settings:
+      date_format: custom
+      custom_date_format: 'H:i'
+      timezone: ''
+      tooltip:
+        date_format: long
+        custom_date_format: ''
+      time_diff:
+        enabled: false
+        future_format: '@interval hence'
+        past_format: '@interval ago'
+        granularity: 2
+        refresh: 60
+        description: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

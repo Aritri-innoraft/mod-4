@@ -1,0 +1,39 @@
+uuid: 421e8ad6-8146-417f-ada1-804b03815a16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.movies_ct.field_details
+    - field.field.node.movies_ct.field_movie_details
+    - node.type.movies_ct
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.movies_ct.default
+targetEntityType: node
+bundle: movies_ct
+mode: default
+content:
+  field_details:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_movie_details:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,26 @@
+uuid: 768dbfeb-c9bd-49db-b07b-1c7f12b3b8b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.movie_type
+  module:
+    - text
+_core:
+  default_config_hash: 91tMu3FZjugbG4slLz05aoPgfrD7P9koYvJ3p8V5U_w
+id: node.movie_type.body
+field_name: body
+entity_type: node
+bundle: movie_type
+label: 'Movie Type Body'
+description: 'More specific information about the movie_type.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

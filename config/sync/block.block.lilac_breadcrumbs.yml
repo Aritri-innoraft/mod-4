@@ -1,0 +1,22 @@
+uuid: c46a2746-52cb-4cbc-b3d6-5feb39d2c139
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - lilac
+_core:
+  default_config_hash: VShtwe72J2j41BJzApoNbs8l554EpngM5RTObxM7yiw
+id: lilac_breadcrumbs
+theme: lilac
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

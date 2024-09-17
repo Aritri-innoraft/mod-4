@@ -1,0 +1,29 @@
+.custom__block {
+  background-color: brown;
+  padding: 5px;
+  color: white;
+}
+
+.custom__block__content {
+  background-color: rgb(171, 175, 56);
+  padding: 10px;
+}
+
+.marquee-text {
+  background-color: goldenrod;
+  padding: 10px;
+}
+
+div#block-gold-mymodulecustomblock {
+  border: 5px solid gold;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.theme-ct {
+  display: flex;
+}
+
+.theme-ct-para, .theme-ct-webform {
+  width: 50%;
+}

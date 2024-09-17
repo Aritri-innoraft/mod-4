@@ -1,0 +1,26 @@
+uuid: 94abf8c9-35e6-4ff2-922c-c2dea1229e21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_events_details
+    - node.type.events
+  module:
+    - text
+_core:
+  default_config_hash: tfRyRA1UDLkfCX_aMS7In93RjBwlXHpo0J5YOyAJa9A
+id: node.events.field_events_details
+field_name: field_events_details
+entity_type: node
+bundle: events
+label: 'Event details'
+description: 'Details about event.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+  display_summary: 0
+  required_summary: false
+field_type: text_long

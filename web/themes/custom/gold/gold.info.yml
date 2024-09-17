@@ -1,0 +1,20 @@
+name: Gold
+type: theme
+description: 'Custom theme maned gold.'
+package: Custom
+base theme: olivero
+version: VERSION
+core_version_requirement: ^9 || ^10
+screenshot: screenshot.png
+regions: 
+  site_logo: 'Logo'
+  menu: 'Navigation'
+  header: 'Header'
+  content: 'Content'
+  sidebar: 'Sidebar'
+  footer: 'Footer'
+libraries:
+  - gold/global-style
+  # - gold/phone-js
+  # - gold/article-js
+logo: images/logo.png

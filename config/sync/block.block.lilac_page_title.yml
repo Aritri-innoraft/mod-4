@@ -1,0 +1,20 @@
+uuid: 81bdc876-9840-475b-8e3d-cf8a8a04fedc
+langcode: en
+status: true
+dependencies:
+  theme:
+    - lilac
+_core:
+  default_config_hash: qYppfxaWSy6BwGNKdMch1PeUA24PlRTt39jQft6A6Kg
+id: lilac_page_title
+theme: lilac
+region: content
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

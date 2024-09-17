@@ -1,0 +1,13 @@
+uuid: 138b1383-57a4-4d2e-ba49-844911a05356
+langcode: en
+status: true
+dependencies: {  }
+id: test_new_movie_award
+label: 'test new movie award'
+description: hgfhgycghvgc
+movie:
+  -
+    target_id: '19'
+  -
+    target_id: '20'
+year: '1289'

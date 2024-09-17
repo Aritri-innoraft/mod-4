@@ -1,0 +1,22 @@
+uuid: 3cb91c2b-b91a-4106-a553-d3b5b7662f58
+langcode: en
+status: true
+dependencies:
+  theme:
+    - gold
+_core:
+  default_config_hash: ydSxdq7R66I8UMC460rOzlfzvlUL4VRbdwc6z9DWaUI
+id: gold_secondary_local_tasks
+theme: gold
+region: site_logo
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

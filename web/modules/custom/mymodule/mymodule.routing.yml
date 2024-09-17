@@ -1,0 +1,72 @@
+mymodule.settings_form:
+  path: '/admin/config/mymodule'
+  defaults: 
+    _form: '\Drupal\mymodule\Form\MyModuleSettingsForm'
+    _title: 'My Module Settings'
+  requirements: 
+    _permission: 'administer site configuration'
+
+custom_multistep_form:
+  path: '/admin/multistepform'
+  defaults:
+    _form: '\Drupal\mymodule\Form\CustomMultistepForm'
+    _title: 'Multistep Form'
+  requirements:
+    _permission: 'access content'
+
+ajax_form:
+  path: '/admin/ajaxform'
+  defaults:
+    _form: '\Drupal\mymodule\Form\AjaxForm'
+    _title: 'Ajax Form'
+  requirements:
+    _permission: 'access content'
+
+block_task_form:
+  path: '/admin/block/form'
+  defaults:
+    _form: '\Drupal\mymodule\Form\BlockTaskForm'
+    _title: 'Block Form'
+  requirements:
+    _permission: 'access content'
+
+conditional_field_form:
+  path: '/field/form'
+  defaults:
+    _form: '\Drupal\mymodule\Form\ConditionalFieldForm'
+    _title: 'Conditional Field Form'
+  requirements:
+    _permission: 'access content'
+
+mymodule.helloMsg:
+  path: '/hellomsg'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\MyController::helloMsg'
+    _title: 'This is custom page.'
+  requirements:
+    _permission: 'access content'
+
+mymodule.variableContent:
+  path: '/varcontent/{name_1}/{name_2}'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\MyController::variableContent'
+    _title: 'This page is for variableContent function route..'
+  requirements:
+    _permission: 'access content'
+
+mymodule.helloUser:
+  path: '/hellouser'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\MyController::helloUser'
+    _title: 'This page is created to say hello to the user'
+  requirements:
+    _role: 'administrator + content_editor + manager'
+    # _custom_access: '\Drupal\mymodule\Controller\MyController::accessCheck'
+
+mymodule.my_page:
+  path: '/custom-welcome-page'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\MyController::myPage'
+    _title: 'Custom Welcome Page'
+  requirements:
+    _permission: 'access content'

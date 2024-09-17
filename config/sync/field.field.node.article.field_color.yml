@@ -1,0 +1,21 @@
+uuid: 3e6fb498-97b8-435c-adc8-b1bd3bd4418b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_color
+    - node.type.article
+  module:
+    - mymodule
+id: node.article.field_color
+field_name: field_color
+entity_type: node
+bundle: article
+label: Color
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: mymodule_rgb

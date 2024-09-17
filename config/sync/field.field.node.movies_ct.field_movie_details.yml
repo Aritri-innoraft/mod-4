@@ -1,0 +1,22 @@
+uuid: 901405fd-f77d-4a0d-9124-aadc3649dcbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_details
+    - node.type.movies_ct
+  module:
+    - text
+id: node.movies_ct.field_movie_details
+field_name: field_movie_details
+entity_type: node
+bundle: movies_ct
+label: 'Movie Details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text

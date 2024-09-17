@@ -1,0 +1,8 @@
+gold.my_page:
+  path: '/themect'
+  defaults:
+    _controller: '\Drupal\gold\Controller\GoldController::themeCT'
+    _title: 'Custom Page'
+  requirements:
+    _permission: 'access content'
+    

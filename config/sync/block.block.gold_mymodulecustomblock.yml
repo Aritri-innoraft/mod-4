@@ -1,0 +1,20 @@
+uuid: 1ba54ee3-97d2-4802-bfc1-78a87e7c3589
+langcode: en
+status: true
+dependencies:
+  module:
+    - mymodule
+  theme:
+    - gold
+id: gold_mymodulecustomblock
+theme: gold
+region: sidebar
+weight: 0
+provider: null
+plugin: mymodule_custom_block
+settings:
+  id: mymodule_custom_block
+  label: 'MyModule Custom Block'
+  label_display: visible
+  provider: mymodule
+visibility: {  }

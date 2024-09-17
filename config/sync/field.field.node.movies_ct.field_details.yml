@@ -1,0 +1,31 @@
+uuid: d3680ff3-a955-4a11-ba1a-085b7b09cb30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_details
+    - node.type.movies_ct
+    - paragraphs.paragraphs_type.movies_ct_details
+  module:
+    - entity_reference_revisions
+id: node.movies_ct.field_details
+field_name: field_details
+entity_type: node
+bundle: movies_ct
+label: Details
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      movies_ct_details: movies_ct_details
+    negate: 0
+    target_bundles_drag_drop:
+      movies_ct_details:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

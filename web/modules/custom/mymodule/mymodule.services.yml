@@ -1,0 +1,9 @@
+services:
+  mymodule.current_user:
+    class: Drupal\mymodule\CurrentUser
+    arguments: ['@current_user']  #constructor parameter
+
+  mymodule.event_subscriber:
+    class: Drupal\mymodule\Routing\RouteSubscriber
+    tags: 
+      - { name: event_subscriber }

@@ -1,0 +1,41 @@
+uuid: ee59dd27-1b55-48a0-ae3f-beba477d0829
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.theme_3_ct.field_contact_details
+    - field.field.node.theme_3_ct.field_education
+    - node.type.theme_3_ct
+  module:
+    - entity_reference_revisions
+    - user
+    - webform
+id: node.theme_3_ct.default
+targetEntityType: node
+bundle: theme_3_ct
+mode: default
+content:
+  field_contact_details:
+    type: webform_entity_reference_entity_view
+    label: above
+    settings:
+      source_entity: true
+      lazy: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_education:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

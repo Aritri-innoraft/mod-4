@@ -1,0 +1,204 @@
+<?php
+
+/**
+ * @file 
+ * This file demonstrates how to use hook functions.
+ */
+
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Url;
+use Drupal\mymodule\Controller\MyController;
+use Drupal\node\NodeInterface;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+
+
+/**
+* Implements hook_cron().
+*/
+function mymodule_cron() {
+  \Drupal::messenger()->addMessage(t("Hello from mymodule cron hook!!"));
+}
+
+/**
+* Implements hook_form_alter().
+*/
+function mymodule_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  \Drupal::messenger()->addMessage(t("Form id of this form is @id:",['@id' => $form_id]));
+  if ($form_id == 'node_article_edit_form') {
+    $form['actions']['submit']['#value'] = t("Save this awesome article!");
+  }
+
+  if (\Drupal::currentUser()->hasPermission('static permission 2')) {
+    \Drupal::messenger()->addMessage(t("You have static permission 2!"));
+  }
+  else {
+    \Drupal::messenger()->addMessage(t("You  DO NOT have static permission 2!"));
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function mymodule_form_user_login_form_alter(&$form) {
+  $form['#submit'][] = 'mymodule_user_login_submit';
+}
+
+/**
+ * Form submission handler for user_login_form().
+ *
+ * Redirects the user to the /custom-welcome-page after logging in.
+ */
+function mymodule_user_login_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $url = Url::fromRoute('mymodule.my_page');
+  $form_state->setRedirectUrl($url);
+}
+
+// function mymodule_preprocess_page(&$variable) {
+//   dump($variable);
+//   dump('hello');
+//   dump('bye');
+// }
+
+/**
+ * Implements hook_mymodule_count_increment()
+ */
+function check_mymodule_count_increment($current_count, NodeInterface $node) {
+  if ($current_count == 1) {
+    \Drupal::messenger()->addMessage(t("This is the first time you have viewed the node %title", ['%title' => $node->label()]));
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view.
+ */
+function mymodule_node__view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+
+  // Counts the number of times the current node has been viewed in this session.
+  $session = \Drupal::request()->getSession();
+  $current_count = $session->get('hooks_example.view_counts', array());
+  if (!isset($current_count[$entity->id()])) {
+    $current_count[$entity->id()] = 1;
+  }
+  else {
+    $current_count[$entity->id()]++;
+  }
+  $session->set('hooks_example.view_counts', $current_count);
+  // Invoke a hook to alert other modules that the count was updated.
+  $module_handler = \Drupal::moduleHandler();
+
+  // Invoking hook_mymodule_count_increment() and passing all implementations the current 
+  // view count for the node, and the node object itself.
+  $module_handler->invokeAll('mymodule_count_increment', array($current_count));
+
+  // Display the current number of pages the user has viewed along with the node's content.
+  $build['view_count'] = array(
+    '#markup' => '<p>' . t('You have viewed this node  2 total number of times in this session.', array('@total' => $current_count[$entity->id()])) . '</p>',
+    '#cache' => array(
+      'max-age' => 0,
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function mymodule_theme($existing, $type, $theme, $path) {
+  return [
+    'mymodule_custom_formatter' => [
+      'variables' => [
+        'value' => NULL,
+      ],
+    ],
+    // 'block__olivero_mymodulecustomblock' => [
+    //   'variables' => [
+    //     'title_prefix' => NULL,
+    //     'label' => NULL,
+    //     'title_suffix' => NULL,
+    //     'content' => NULL,
+    //   ],
+    // ]
+  ];
+}
+
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function mymodule_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  // Check if this is the view you want to alter.
+  if ($view->id() == 'article_block') {
+    // Modify the sorting of the query.
+    $query->orderby[] = [
+      'field' => 'node_field_data.nid',
+      'direction' => 'DESC', // Sorting direction: 'ASC' or 'DESC'
+    ];
+
+
+    // $definition = [
+    //   'table' => 'node__field_events_type',
+    //   'field' => ' field_events_type_value',
+    //   'left_table' => 'node_field_data',
+    //   'left_field' => 'nid',
+    // ];
+    // $join = \Drupal::service('plugin.manager.views.join')
+    //       ->createInstance('standard', $definition);
+    // $query->addRelationship('my_relation', $join, 'node_field_data');
+
+    // $current_user = $view->getUser();
+    // $condition = _my_module_custom_condition($current_user);
+    // if ($condition) {
+    //   $definition = [
+    //     'table' => 'node__field_user',
+    //     'field' => 'entity_id',
+    //     'left_table' => 'node',
+    //     'left_field' => 'id',
+    //   ];
+    //   $join = \Drupal::service('plugin.manager.views.join')
+    //     ->createInstance('standard', $definition);
+    //   $query->addRelationship('my_relation', $join, 'node');
+
+    //   $currentUserId = $current_user->id();
+    //   $query->addWhereExpression('AND',
+    //     'my_relation.field_user_target_id = :currentUid',
+    //     ['currentUid' => $currentUserId]);
+    // }
+
+  }
+}
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function mymodule_views_data_alter(array &$data) {
+  // if ($view->id() == 'article_block') {
+    $data['taxonomy_index']['relationship_name'] = [
+      'title' => t('Taxonomy Index'),
+      'help' => t('Information about the taxonomy index'),
+      'relationship' => [
+        'base' => 'taxonomy_term_field_data',
+        'base field' => 'tid',
+        'field' => 'tid',
+        'id' => 'standard',
+        'label' => t('Taxonomy Index'),
+      ],
+    ];
+  // }
+}
+
+// function _my_module_custom_condition(AccountInterface $current_user) {
+//   $result = TRUE;
+//   // Some stuff.
+//   return $result;
+// }
+
+/**
+ * Implements hook_views_pre_view().
+ */
+// function mymodule_views_pre_view(&$view, &$display_id, &$args) {
+//   if ($view->id() == 'article_block' ) {
+//     // Add the relationship to the node entity referenced in your field.
+//     $view->query->addRelationship('field_reference', 'node__field_events_type', ['field' => 'field_name_target_id']);
+//     $view->addField('node__field_events_type', ' field_events_type_value', 'Event Type');
+//   }
+// }

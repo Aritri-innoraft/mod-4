@@ -1,0 +1,38 @@
+uuid: d134d304-c030-4169-ab76-9160cf51f2cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.education_details.field_cgpa
+    - field.field.paragraph.education_details.field_college
+    - field.field.paragraph.education_details.field_school
+    - paragraphs.paragraphs_type.education_details
+  module:
+    - text
+id: paragraph.education_details.default
+targetEntityType: paragraph
+bundle: education_details
+mode: default
+content:
+  field_cgpa:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_college:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_school:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

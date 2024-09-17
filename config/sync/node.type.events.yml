@@ -1,0 +1,16 @@
+uuid: c724e147-66f2-4cab-b5c1-7f42c5bb738e
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - db_module
+_core:
+  default_config_hash: WidyEq2cuSh4R8qxlnB5BMKCVfFi2nlXizqzVr_ukHo
+name: Events
+type: events
+description: 'Content type that can be used to accept values like event title, type, date and details'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

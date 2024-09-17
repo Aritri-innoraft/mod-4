@@ -1,0 +1,22 @@
+uuid: 69c1895c-81b5-4901-a194-a9ed0d734e29
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gold
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: gold_powered
+theme: gold
+region: site_logo
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

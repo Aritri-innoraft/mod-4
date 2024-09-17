@@ -1,0 +1,19 @@
+uuid: 8cf9dea5-c3eb-4fc5-babd-2b89bf450475
+langcode: en
+status: true
+dependencies:
+  module:
+    - mymodule
+    - node
+id: node.field_snippet
+field_name: field_snippet
+entity_type: node
+type: snippets_code
+settings: {  }
+module: mymodule
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
